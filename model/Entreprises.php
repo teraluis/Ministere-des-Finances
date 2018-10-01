@@ -17,11 +17,20 @@ class Entreprises  {
     private $nom;
     private $id_denomination;
     private $adresse;
+    private $representant;
     
     public function __construct() {
         
     }
-    function getNom() {
+    function getRepresentant() {
+        return $this->representant;
+    }
+
+    function setRepresentant($representant) {
+        $this->representant = $representant;
+    }
+
+        function getNom() {
         return $this->nom;
     }
 

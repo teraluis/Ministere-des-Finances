@@ -19,13 +19,14 @@ class EntreprisesDAO extends EntitesBase {
     }
 
     public function create(Entreprises $entreprises) {
-        $sql="INSERT INTO entreprises (siret,nom,id_denomination,adresse) VALUES(?,?,?,?)";
+        $sql="INSERT INTO entreprises (siret,nom,id_denomination,adresse,representant) VALUES(?,?,?,?,?)";
         $bdd = Connexion::getInstance();
         $create = $bdd->prepare($sql);
         $create->bindValue(1,$entreprises->getSiret());
         $create->bindValue(2,$entreprises->getNom());
         $create->bindValue(3,$entreprises->getId_denomination());
         $create->bindValue(4,$entreprises->getAdresse());
+        $create->bindValue(5,$entreprises->getRepresentant());
         $create->execute();
         if($create->errorCode()== $this->code){
             return $bdd->lastInsertId();

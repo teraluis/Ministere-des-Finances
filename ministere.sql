@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 01 oct. 2018 à 18:56
+-- Généré le :  lun. 01 oct. 2018 à 20:10
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -72,20 +72,22 @@ CREATE TABLE IF NOT EXISTS `entreprises` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `siret` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
+  `representant` varchar(255) NOT NULL,
   `id_denomination` int(255) NOT NULL,
   `adresse` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nom` (`nom`),
   KEY `FK_denomination` (`id_denomination`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `entreprises`
 --
 
-INSERT INTO `entreprises` (`id`, `siret`, `nom`, `id_denomination`, `adresse`) VALUES
-(1, 5446, 'iconect', 2, '28 rue du moulin 92800'),
-(3, 1453, 'Wayne', 2, '77 avenue de france 75015');
+INSERT INTO `entreprises` (`id`, `siret`, `nom`, `representant`, `id_denomination`, `adresse`) VALUES
+(1, 5446, 'iconect', '', 2, '28 rue du moulin 92800'),
+(3, 1453, 'Wayne', '', 2, '77 avenue de france 75015'),
+(4, 48, 'moulin', 'jad', 1, '28 rue du moulin 92800');
 
 -- --------------------------------------------------------
 

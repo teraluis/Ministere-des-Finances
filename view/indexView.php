@@ -39,15 +39,17 @@
           </tbody>
         </table>
         <form action="<?php echo $helper->url("users","create") ?>" method="post" class="col-lg-5">
-            <h3>Ajouter Utilisateur</h3>
+            <h3>Ajouter un representant de l'éntreprise</h3>
             <hr>
             Nom : <input type="text" name="nom" class="form-control"/>
             mail : <input type="mail" name="mail" class="form-control"/> 
             password :<input type="password" name="password" class="form-control"/>
             <br>
             <input type="submit" name="ajouter" class="form-control"/>
+            <br>
+            <a href="index.php?controller=Entreprise&action=index" class="btn btn-primary">Ajouter une Entreprise </a>
         </form>
-        <a href="index.php?controller=Entreprise&action=index">Entreprises </a>
+        
     </div>
     </body>
     

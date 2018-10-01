@@ -19,11 +19,14 @@ class EntrepriseController extends ControllerBase {
     public function index(){
         $denominationsDAO = new DenominationDAO();
         $entreprisesDAO = new EntreprisesDAO();
+        $utilisateurDAO = new UsersDAO();
+        $allusers = $utilisateurDAO->getAll();
         $allDenominations = $denominationsDAO->getAll();
         $allEntreprises = $entreprisesDAO->getAll();
         $this->view("entreprise", array(
             "allDenominations" =>$allDenominations,
-            "allEntreprises" => $allEntreprises
+            "allEntreprises" => $allEntreprises,
+            "allUsers"      =>$allusers
         ));
     }
     public function create(){
@@ -32,9 +35,11 @@ class EntrepriseController extends ControllerBase {
             $siret = $_POST['siret'];
             $denomination = $_POST['denomination'];
             $adresse = $_POST['adresse'];
+            $representant = $_POST['representant'];
             $entrepriseDAO = new EntreprisesDAO();
             $entreprise = new Entreprises(array());
             $entreprise->setNom($nom);
+            $entreprise->setRepresentant($representant);
             $entreprise->setSiret($siret);
             $entreprise->setId_denomination($denomination);
             $entreprise->setAdresse($adresse);

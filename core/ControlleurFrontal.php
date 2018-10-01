@@ -11,15 +11,19 @@
  *
  * @author ClaraLuis
  */
-class ControlleurFrontal {
+class ControlleurFrontal extends ControllerBase {
     
+    function __construct() {
+        parent::__construct();
+    }
 
+    
     public static function chargerControlleur($controlleur){
         $controlleur = ucwords($controlleur).'Controller';
         
         $strFileController='controller/'.$controlleur.'.php';
         if(!is_file($strFileController)){
-            $strFileController='controller/'.ucwords(CONTROLLER_DEFAULT).'Controller.php';
+            header("Location:index.php"); 
         }
         require_once $strFileController;
 

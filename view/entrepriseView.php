@@ -11,14 +11,15 @@
          </style>
     </head>
     <body>
-    <div class="containre">
+
         <table class="table table-dark">
           <thead>
             <tr>
               <th scope="col">id</th>
-              <th scope="col">nom</th>
+              <th scope="col">Nom de l'Entreprise</th>
               <th scope="col">siret</th>
               <th scope="col">adresse</th>
+              <th scope="col">representant</th>
             </tr>
           </thead>
           <tbody>
@@ -30,6 +31,7 @@
                 $tbody.="<td>".$entreprise->nom."</td>";
                 $tbody.="<td>".$entreprise->siret."</td>";
                 $tbody.="<td>".$entreprise->adresse."</td>";
+                $tbody.="<td>".$entreprise->representant."</td>";
                 $tbody.="</th>";
                 $tbody.="</tr>\r\n";
             }
@@ -37,17 +39,25 @@
             ?>
           </tbody>
         </table>
-        <div class="containre">
+        <div class="container">
         <form action="<?php echo $helper->url("entreprise","create") ?>" method="post" class="col-lg-5">
             <h3>Ajouter une Entreprise</h3>
             <hr>
-            Nom : <input type="text" name="nom" class="form-control"/>
+            Nom de l'entreprise : <input type="text" name="nom" class="form-control"/>
+            <div class="form-group col-md-4">
+                <label for="nom">Représentant</label>
+                <select id="autoEntreprise" name="representant" class="form-control">
+                <?php
+                    foreach ($allUsers as $nom){
+                        echo "<option value='".$nom->nom."'>".$nom->nom."</option>";
+                    }
+                ?>
+                </select>
+            </div>
             siret : <input type="number" name="siret" class="form-control"/> 
             <div class="form-group col-md-4">
                 <label for="autoEntreprise">DENOMINATION</label>
                 <select id="autoEntreprise" name="denomination" class="form-control">
-<!--                <option selected>Auto Entreprise</option>
-                <option >SARL</option>-->
                 <?php
                     foreach ($allDenominations as $denomination){
                         echo "<option value='".$denomination->id."' >".$denomination->nom."</option>";
@@ -55,7 +65,7 @@
                 ?>
                 </select>
             </div>
-            adresse :<input type="text" name="adresse" class="form-control"/>
+            Siège Social :<input type="text" name="adresse" class="form-control"/>
             <br>
             <input type="submit" name="ajouter" class="form-control " />
         </form>
