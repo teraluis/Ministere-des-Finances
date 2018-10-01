@@ -18,12 +18,12 @@ class UsersDAO extends EntitesBase {
     }
 
     public function create(User $user) {
-        $sql="INSERT INTO users (nom,mail,password) VALUES(?,?,?)";
+        $sql="INSERT INTO users (nom,mail,telephone) VALUES(?,?,?)";
         $bdd = Connexion::getInstance();
         $create = $bdd->prepare($sql);
         $create->bindValue(1, $user->getNom());
         $create->bindValue(2,$user->getMail());
-        $create->bindValue(3,$user->getPassword());
+        $create->bindValue(3,$user->getTelephone());
         $create->execute();
         if($create->errorCode()=="00000"){
             return $bdd->lastInsertId();

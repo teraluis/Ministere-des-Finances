@@ -19,7 +19,7 @@
               <th scope="col">id</th>
               <th scope="col">nom</th>
               <th scope="col">mail</th>
-              <th scope="col">password</th>
+              <th scope="col">telephone</th>
             </tr>
           </thead>
           <tbody>
@@ -30,7 +30,7 @@
                 $tbody.="<th scope='row'>".$user->id."</th>";
                 $tbody.="<td>".$user->nom."</td>";
                 $tbody.="<td>".$user->mail."</td>";
-                $tbody.="<td>".$user->password."</td>";
+                $tbody.="<td>".$user->telephone."</td>";
                 $tbody.="</th>";
                 $tbody.="</tr>\r\n";
             }
@@ -43,7 +43,9 @@
             <hr>
             Nom : <input type="text" name="nom" class="form-control"/>
             mail : <input type="mail" name="mail" class="form-control"/> 
-            password :<input type="password" name="password" class="form-control"/>
+            téléphone :<input type="tel" name="tel" class="form-control" placeholder="06-51-48-68-15"
+           pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}"
+           required/>
             <br>
             <input type="submit" name="ajouter" class="form-control"/>
             <br>

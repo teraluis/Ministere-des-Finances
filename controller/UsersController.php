@@ -24,15 +24,15 @@ class UsersController extends ControllerBase {
         ));
     }
     public function create(){
-        if(isset($_POST['nom']) && isset($_POST['mail']) && isset($_POST['password'])){
+        if(isset($_POST['nom']) && isset($_POST['mail']) && isset($_POST['tel'])){
             $nom = $_POST['nom'];
             $mail = $_POST['mail'];
-            $password = $_POST['password'];
+            $tel = $_POST['tel'];
             $utilisateurDAO = new UsersDAO();
             $utilisateur = new User(array());
             $utilisateur->setNom($nom);
             $utilisateur->setMail($mail);
-            $utilisateur->setPassword($password);
+            $utilisateur->setTelephone($tel);
             $utilisateurDAO->create($utilisateur);
         }
         $this->redirect("Users","index");

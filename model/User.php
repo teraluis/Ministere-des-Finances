@@ -13,7 +13,7 @@
  */
 class User {
     //put your code here
-    private $id,$nom,$mail,$password;
+    private $id,$nom,$mail,$telephone;
     
     function __construct(array $donnees) {
         foreach ($donnees as $key=>$value){
@@ -35,10 +35,15 @@ class User {
         return $this->mail;
     }
 
-    function getPassword() {
-        return $this->password;
+    function getTelephone() {
+        return $this->telephone;
     }
 
+    function setTelephone($telephone) {
+        $this->telephone = $telephone;
+    }
+
+    
     function setId($id) {
         $this->id = $id;
     }
@@ -51,9 +56,7 @@ class User {
         $this->mail = $mail;
     }
 
-    function setPassword($password) {
-        $this->password = $password;
-    }
+
 
 
 }
