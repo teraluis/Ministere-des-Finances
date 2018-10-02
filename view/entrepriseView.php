@@ -58,7 +58,7 @@
             siret : <input type="number" name="siret" class="form-control"/> 
             <div class="form-group col-md-6">
                 <label for="autoEntreprise">Forme Juridique :</label>
-                <select id="autoEntreprise" name="denomination" class="form-control">
+                <select id="denomination" name="denomination" class="form-control">
                 <?php
                     foreach ($allDenominations as $denomination){
                         echo "<option value='".$denomination->id."' >".$denomination->nom."</option>";
@@ -66,12 +66,20 @@
                 ?>
                 </select>
             </div>
-            Adresse du Siège Social :<input type="text" name="adresse" class="form-control"/>
+            Adresse du Siège Social :<input id="adresse" type="text" name="adresse" class="form-control"/>
             <br>
             <input type="submit" name="ajouter" class="form-control " />
             <br/>
             <a href="index.php?controller=User&action=index" class="btn btn-primary">Ajouter une Representant </a>
         </form>
+        <script>
+            $( "#denomination" ).change(function() {
+                if(this.value==1){
+                    $("#adresse").attr("disabled",true); 
+                }
+              
+            });
+        </script>
         </div>
     </body>
     

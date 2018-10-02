@@ -30,7 +30,7 @@ class EntrepriseController extends ControllerBase {
         ));
     }
     public function create(){
-        if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['siret']) && !empty($_POST['siret']) && isset($_POST['denomination']) && !empty($_POST['denomination']) && isset($_POST['adresse'])){
+        if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['siret']) && !empty($_POST['siret']) && isset($_POST['denomination']) && !empty($_POST['denomination'])){
             $nom = $_POST['nom'];
             $siret = $_POST['siret'];
             $denomination = $_POST['denomination'];
@@ -41,6 +41,9 @@ class EntrepriseController extends ControllerBase {
             $entreprise->setNom($nom);
             $entreprise->setRepresentant($representant);
             $entreprise->setSiret($siret);
+            if($denomination==1){
+                $adresse="";
+            }
             $entreprise->setId_denomination($denomination);
             $entreprise->setAdresse($adresse);
             $entrepriseDAO->create($entreprise);

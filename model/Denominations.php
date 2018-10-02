@@ -12,5 +12,55 @@
  * @author ClaraLuis
  */
 class Denominations {
-    //put your code here
+    private $id;
+    private $nom;
+    private $creation;
+    private $user;
+    private $pourcent;
+    
+    function __construct() {
+        
+    }
+    function getId() {
+        return $this->id;
+    }
+
+    function getNom() {
+        return $this->nom;
+    }
+
+    function getCreation() {
+        return $this->creation;
+    }
+
+    function getUser() {
+        return $this->user;
+    }
+
+    function getPourcent() {
+        return $this->pourcent;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
+    function setNom($nom) {
+        $this->nom = $nom;
+    }
+
+    function setCreation($creation) {
+        $this->creation = $creation;
+    }
+
+    function setUser($user) {
+        $this->user = $user;
+    }
+
+    function setPourcent($pourcent) {
+        $this->pourcent = $pourcent;
+    }
+
+
+
 }
