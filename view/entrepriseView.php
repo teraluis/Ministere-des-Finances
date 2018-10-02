@@ -11,7 +11,7 @@
          </style>
     </head>
     <body>
-
+<?php include 'navbar.php'; ?>
         <table class="table table-dark">
           <thead>
             <tr>

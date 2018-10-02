@@ -15,7 +15,7 @@
         </style>
     </head>
     <body>
-
+<?php include 'navbar.php'; ?>
     <div class="containre">
         <table id="example" class="display" width="100%">
         <thead>
