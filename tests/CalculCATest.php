@@ -46,7 +46,7 @@ final class CalculCATest extends PHPUnit_Framework_TestCase  {
             $ca->setAnnee("2018");
             $CalculDAO = new CalculCADAO();
             $CalculDAO->calculCADAO($ca);
-            $impots= $CalculDAO->getById($id);
+            $impots= $CalculDAO->getById(1);
             $impots = $impots[0];
             $impots = $impots->impots;
             $this->assertEquals($impots, 200000.1125);
