@@ -40,6 +40,29 @@ class CalculCADAO extends EntitesBase {
         $ca->setId_entreprise($id_entreprise);
         $ca->setImpots($impots);
         //fin du Calcul
+        $this->create($ca);
+        /*on pourrait ajouter une condition sur la date du CA en plus car si elle existe deja on pourrait soit la modifier
+        Soit generer une erreur on lui disant qu'il l'a déjà calcule pour cette année
+                   */
+    }
+    public function jointureEntreprisesCA(){
+        $query = "SELECT entreprises.siret, entreprises.nom , chiffreaffaires.montant, chiffreaffaires.impots,chiffreaffaires.annee
+        FROM entreprises
+        LEFT JOIN chiffreaffaires ON chiffreaffaires.id_entreprise = entreprises.id";
+        $bdd = Connexion::getInstance();
+        $afficher=$bdd->prepare($query);
+        $afficher->execute();
+        if($afficher->errorCode()==self::ERROR_CODE){
+            $reponse = array();
+            while($row = $afficher->fetchObject()){
+                $reponse[]=$row;
+            }
+            return $reponse;
+        }else {
+            return "code d'erreur getAll :".$afficher->errorCode();
+        }
+    }
+    public function create(Ca $ca){
         $query = "INSERT INTO chiffreaffaires (id_entreprise,montant,impots,annee,modification)"
                 . " VALUES(?,?,?,?,NOW())";
         $bdd = Connexion::getInstance();
@@ -58,23 +81,6 @@ class CalculCADAO extends EntitesBase {
             return $reponse;
         }else {
             return "code d'erreur getById :".$create->errorCode();
-        }
-    }
-    public function jointureEntreprisesCA(){
-        $query = "SELECT entreprises.siret, entreprises.nom , chiffreaffaires.montant, chiffreaffaires.impots,chiffreaffaires.annee
-        FROM entreprises
-        LEFT JOIN chiffreaffaires ON chiffreaffaires.id_entreprise = entreprises.id";
-        $bdd = Connexion::getInstance();
-        $afficher=$bdd->prepare($query);
-        $afficher->execute();
-        if($afficher->errorCode()==self::ERROR_CODE){
-            $reponse = array();
-            while($row = $afficher->fetchObject()){
-                $reponse[]=$row;
-            }
-            return $reponse;
-        }else {
-            return "code d'erreur getAll :".$afficher->errorCode();
         }
     }
 }
