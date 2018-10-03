@@ -91,5 +91,23 @@ class EntitesBase {
         }else {
             return "ko";
         }
-    }   
+    }
+    public function truncateAll(){
+        require_once 'config/database.php';
+        $query = "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE '".DB_BASE."'";
+        $stmt=$this->bd()->prepare($query);
+        $stmt->execute();
+        if($stmt->errorCode()==self::ERROR_CODE){
+            $tables = array();
+            $tables = $stmt->fetchAll();
+            foreach($tables as $table)
+            {
+                $sql = "TRUNCATE TABLE `".$table['TABLE_NAME']."`";
+                $result = $this->bd()->query($sql);
+            }
+            return "ok";
+        }else {
+            return "ko".$stmt->errorCode();
+        }
+    }
 }

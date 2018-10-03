@@ -6,9 +6,13 @@ require './vendor/autoload.php';
  */
 
 final class CalculCATest extends PHPUnit_Framework_TestCase  {
-
+    public function testInit(){
+        $dao = new UsersDAO();
+        $result=$dao->truncateAll();
+        $this->assertEquals($result,"ok");
+    }
     public function testCreateReferent(){
-        $user = new User();
+        $user = new User(array());//le contenu doit être un tableau vide
         $user->setNom("Michael Marks");
         $user->setTelephone("01-12-34-56-98");
         $user->setMail("michael.marks@spencer.com");
@@ -42,6 +46,10 @@ final class CalculCATest extends PHPUnit_Framework_TestCase  {
             $ca->setAnnee("2018");
             $CalculDAO = new CalculCADAO();
             $CalculDAO->calculCADAO($ca);
+            $impots= $CalculDAO->getById($id);
+            $impots = $impots[0];
+            $impots = $impots->impots;
+            $this->assertEquals($impots, 200000.1125);
     }
 
 }
