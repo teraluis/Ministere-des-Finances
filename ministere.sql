@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 02 oct. 2018 à 11:25
+-- Généré le :  mer. 03 oct. 2018 à 06:23
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -38,14 +38,15 @@ CREATE TABLE IF NOT EXISTS `chiffreaffaires` (
   `modification` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `FK_enteprise` (`id_entreprise`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `chiffreaffaires`
 --
 
 INSERT INTO `chiffreaffaires` (`id`, `id_entreprise`, `montant`, `impots`, `annee`, `modification`) VALUES
-(1, 5, 50000, 12500, 2018, '2018-10-02 13:22:43');
+(1, 5, 50000, 12500, 2018, '2018-10-02 13:22:43'),
+(2, 1, 200000, 66000, 2017, '2018-10-02 13:36:09');
 
 -- --------------------------------------------------------
 
@@ -60,7 +61,8 @@ CREATE TABLE IF NOT EXISTS `denominations` (
   `creation` date NOT NULL,
   `user` varchar(255) NOT NULL,
   `pourcent` float NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_index` (`creation`,`nom`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
@@ -112,7 +114,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `nom` varchar(255) NOT NULL,
   `mail` varchar(255) NOT NULL,
   `telephone` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unique_index` (`telephone`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --

@@ -55,7 +55,8 @@
                 ?>
                 </select>
             </div>
-            siret : <input type="number" name="siret" class="form-control"/> 
+            siret : <input type="number" name="siret"  pattern="[0-9]{13}"
+                           class="form-control" required="true"/> 
             <div class="form-group col-md-6">
                 <label for="autoEntreprise">Forme Juridique :</label>
                 <select id="denomination" name="denomination" class="form-control">

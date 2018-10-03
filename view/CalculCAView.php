@@ -41,7 +41,7 @@
                 ?>
                 </select>
             </div>
-            montant : <input type="text" name="montant" class="form-control" required="true"/> 
+            montant du chiffre d'affaire : <input type="text" name="montant" class="form-control" required="true"/> 
             <div class="form-group col-md-6">
                 <label for="nom">Année :</label>
                 <select id="annee" name="annee" class="form-control">

@@ -6,8 +6,12 @@
             <file>file:/C:/wamp64/www/ministere_projet/view/indexView.php</file>
             <file>file:/C:/wamp64/www/ministere_projet/view/entrepriseView.php</file>
             <file>file:/C:/wamp64/www/ministere_projet/controller/EntrepriseController.php</file>
+            <file>file:/C:/wamp64/www/ministere_projet/view/CalculCAView.php</file>
+            <file>file:/C:/wamp64/www/ministere_projet/model/DenominationDAO.php</file>
             <file>file:/C:/wamp64/www/ministere_projet/model/EntreprisesDAO.php</file>
-            <file>file:/C:/wamp64/www/ministere_projet/model/UsersDAO.php</file>
+            <file>file:/C:/wamp64/www/ministere_projet/composer.json</file>
+            <file>file:/C:/wamp64/www/ministere_projet/controller/CalculCAController.php</file>
+            <file>file:/C:/wamp64/www/ministere_projet/tests/Test.php</file>
         </group>
     </open-files>
 </project-private>
