@@ -9,6 +9,6 @@
     <a class="nav-link" href="index.php?controller=CalculCA&action=index">Calculer des impôts</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link disabled" href="#">Tableau de Bord</a>
+    <a class="nav-link disabled" href="index.php?controller=Denomination&action=index"">Ajouter Forme Juridique</a>
   </li>
 </ul>

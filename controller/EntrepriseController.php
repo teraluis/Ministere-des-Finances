@@ -30,6 +30,10 @@ class EntrepriseController extends ControllerBase {
         ));
     }
     public function create(){
+        /*
+         * Cette function come toutes les autres sont incompletes il manque le traitement de cas en erreur de formualire et la verfication 
+         * des champs bien entendu
+         */
         if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['siret']) && !empty($_POST['siret']) && isset($_POST['denomination']) && !empty($_POST['denomination'])){
             $nom = $_POST['nom'];
             $siret = $_POST['siret'];

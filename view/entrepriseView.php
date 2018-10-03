@@ -43,7 +43,7 @@
         <form action="<?php echo $helper->url("entreprise","create") ?>" method="post" class="col-lg-5">
             <h3>Ajouter une Entreprise</h3>
             <hr>
-            Denomination : <input type="text" name="nom" class="form-control"/>
+            Denomination ou Nom de l'énreprise: <input type="text" name="nom" class="form-control"/>
             <div class="form-group col-md-6">
                 <label for="nom">Représentant :</label>
                 <select id="autoEntreprise" name="representant" class="form-control">
@@ -55,10 +55,11 @@
                 ?>
                 </select>
             </div>
-            siret : <input type="number" name="siret"  pattern="[0-9]{13}"
+            <span>le siret doit contenir 14 chiffres pour être valide</span><br>
+            siret : <input type="number" name="siret"  pattern="[0-9]{14}" placeholder="12345678910112"
                            class="form-control" required="true"/> 
             <div class="form-group col-md-6">
-                <label for="autoEntreprise">Forme Juridique :</label>
+                <label for="autoEntreprise">Forme Juridique (les auto-entreprises n'ont pas de siège social) :</label>
                 <select id="denomination" name="denomination" class="form-control">
                 <?php
                     foreach ($allDenominations as $denomination){
@@ -74,6 +75,13 @@
             <a href="index.php?controller=User&action=index" class="btn btn-primary">Ajouter une Representant </a>
         </form>
         <script>
+           $( window ).ready(function() {
+               var option = $( "#denomination" ).find("option");
+               console.log(option[0].value);
+                if(option[0].value==1){
+                    $("#adresse").attr("disabled",true); 
+                }
+            });
             $( "#denomination" ).change(function() {
                 if(this.value==1){
                     $("#adresse").attr("disabled",true); 

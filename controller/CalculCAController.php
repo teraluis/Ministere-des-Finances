@@ -24,7 +24,10 @@ class CalculCAController extends ControllerBase {
         ));
     }
     public function calculTaxe(){ 
-            
+        /*
+         * Cette function come toutes les autres sont incompletes il manque le traitement de cas en erreur de formualire et la verfication 
+         * des champs bien entendu
+         */    
         if(isset($_POST['siret']) && isset($_POST['montant']) && isset($_POST['annee'])){
             $id_entreprise = $_POST['siret'];
             $montant=$_POST['montant'];

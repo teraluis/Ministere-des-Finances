@@ -16,6 +16,8 @@
  * in PHP. The pattern is matched by executing preg_match().
  *
  * The pattern string passed in the constructor.
+ *
+ * @since Class available since Release 3.0.0
  */
 class PHPUnit_Framework_Constraint_PCREMatch extends PHPUnit_Framework_Constraint
 {
@@ -37,8 +39,7 @@ class PHPUnit_Framework_Constraint_PCREMatch extends PHPUnit_Framework_Constrain
      * Evaluates the constraint for parameter $other. Returns true if the
      * constraint is met, false otherwise.
      *
-     * @param mixed $other Value or object to evaluate.
-     *
+     * @param  mixed $other Value or object to evaluate.
      * @return bool
      */
     protected function matches($other)

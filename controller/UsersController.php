@@ -24,6 +24,10 @@ class UsersController extends ControllerBase {
         ));
     }
     public function create(){
+        /*
+         * Cette function come toutes les autres sont incompletes il manque le traitement de cas en erreur de formualire et la verfication 
+         * des champs bien entendu
+         */
         if(isset($_POST['nom']) && isset($_POST['mail']) && isset($_POST['tel'])){
             $nom = $_POST['nom'];
             $mail = $_POST['mail'];
@@ -38,11 +42,15 @@ class UsersController extends ControllerBase {
         $this->redirect("Users","index");
     }
     public function delete(){
+        /*
+         * Cette function come toutes les autres sont incompletes il manque le traitement de cas en erreur de formualire et la verfication 
+         * des champs bien entendu
+         */
         if(isset($_GET['id'])){
             $id = (int) $_GET["id"];
             $usuarioDAO= new UsersDAO();
             $usuarioDAO->deleteById($id);
-            $this->redirect();
         }
+        $this->redirect();
     }
 }
