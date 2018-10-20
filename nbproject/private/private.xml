@@ -3,15 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/ministere_projet/view/indexView.php</file>
-            <file>file:/C:/wamp64/www/ministere_projet/view/entrepriseView.php</file>
-            <file>file:/C:/wamp64/www/ministere_projet/controller/EntrepriseController.php</file>
-            <file>file:/C:/wamp64/www/ministere_projet/view/CalculCAView.php</file>
-            <file>file:/C:/wamp64/www/ministere_projet/model/DenominationDAO.php</file>
-            <file>file:/C:/wamp64/www/ministere_projet/model/EntreprisesDAO.php</file>
-            <file>file:/C:/wamp64/www/ministere_projet/composer.json</file>
-            <file>file:/C:/wamp64/www/ministere_projet/controller/CalculCAController.php</file>
-            <file>file:/C:/wamp64/www/ministere_projet/tests/Test.php</file>
+            <file>file:/C:/wamp64/www/ministere_projet/tests/CalculCATest.php</file>
+            <file>file:/C:/wamp64/www/ministere_projet/model/CalculCADAO.php</file>
+            <file>file:/C:/wamp64/www/ministere_projet/model/UsersDAO.php</file>
+            <file>file:/C:/wamp64/www/ministere_projet/config/database.php</file>
+            <file>file:/C:/wamp64/www/ministere_projet/core/EntitesBase.php</file>
         </group>
     </open-files>
 </project-private>
