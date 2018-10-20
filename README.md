@@ -27,6 +27,7 @@ nécessaire de l'inclure dans les propriétés des entreprises.
 <p>php "vendor/phpunit/phpunit/phpunit" --bootstrap vendor/autoload.php tests/CalculCATest</p>
 <h1>Base de Données</h1>
 <p>Pour que l'application fonctionne vous devez exporter la base de données sur votre logiciel d'administration des données préfere</p>
+<h1>Retour</h1>
 <p>
   Voici quelques infos sur le test de Luis :
 
